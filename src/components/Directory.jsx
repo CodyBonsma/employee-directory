@@ -16,13 +16,18 @@ class Directory extends Component {
     employeeData = () => {
         axios.get("https://randomuser.me/api/?results=80&nat=us").then((response) => {
             // console.log(response.data.results)
-
             this.setState({
                 data: response.data.results
             })
         }).catch((err) => {
             if (err) throw err;
         })
+    }
+
+    // handle input search field and update state 
+    // this.state.filter to sort the data with the new name
+    handleSearch = (input) => {
+        console.log(input);
     }
 
     // setup page to pass on to App.js 
@@ -38,7 +43,7 @@ class Directory extends Component {
                 <div className="row">
                     <div className="col-sm-1" />
                     <div className="col-sm-10 text-center">
-                    <input type="text" class="form-control" aria-label="Default" placeholder="Search for employee" aria-describedby="inputGroup-sizing-default"/> 
+                    <input type="text" class="form-control" onChange={this.handleSearch} placeholder="Search for employee" aria-describedby="inputGroup-sizing-default"/> 
                         <h2>This will hold the employee table rows</h2>
                         <table className="table table-dark">
                             <thead>
@@ -55,7 +60,7 @@ class Directory extends Component {
                                     console.log(data);
                                     return (<tr>
                                         <th scope="row"><img src={data.picture.medium} /></th>
-                                        <td>{data.name.first + " " + data.name.last}</td>
+                                        <td key={data.id.value}>{data.name.first + " " + data.name.last}</td>
                                         <td>{data.phone}</td>
                                         <td><a href="">{data.email}</a></td>
                                         <td>{data.dob.age}</td>
