@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import style from "./directory.css"
 
 class Directory extends Component {
     // set state to work with 
@@ -14,6 +15,7 @@ class Directory extends Component {
 
     // make a get request to get random employee data
     employeeData = () => {
+
         axios.get("https://randomuser.me/api/?results=80&nat=us").then((response) => {
             // console.log(response.data.results)
             this.setState({
@@ -26,15 +28,22 @@ class Directory extends Component {
 
     // handle input search field and update state 
     // this.state.filter to sort the data with the new name
-    handleSearch = (input) => {
-        console.log(input);
+    handleSearch = (event) => {
+        event.preventDefault();
+        console.log(event.target.value);
+        let searchName = event.target.value;
+        let newName = this.state.data.filter((name) => name.name.first === searchName);
+        console.log(newName);
+        this.setState({
+            data: newName
+        })
     }
 
     // setup page to pass on to App.js 
     render() {
         return (
             <div className="container">
-                <div className="row header-row">
+                <div className="row header-row" style={style}>
                     <div className="col-sm-3" />
                     <div className="col-sm-6 text-center">
                         <h1>Employee Directory</h1>
@@ -43,7 +52,7 @@ class Directory extends Component {
                 <div className="row">
                     <div className="col-sm-1" />
                     <div className="col-sm-10 text-center">
-                    <input type="text" class="form-control" onChange={this.handleSearch} placeholder="Search for employee" aria-describedby="inputGroup-sizing-default"/> 
+                        <input type="text" class="form-control" onChange={this.handleSearch} placeholder="Search for employee" aria-describedby="inputGroup-sizing-default" />
                         <h2>This will hold the employee table rows</h2>
                         <table className="table table-dark">
                             <thead>
