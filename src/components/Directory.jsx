@@ -55,20 +55,18 @@ class Directory extends Component {
                                     <th scope="col">DOB</th>
                                 </tr>
                             </thead>
-
-                            {this.state.data.map((data) => {
-                                console.log(data);
-                                <tbody>
-                                    <tr>
+                            <tbody>
+                                {this.state.data.map((data) => {
+                                    console.log(data);
+                                    return (<tr>
                                         <th scope="row"><img src={data.picture.medium} /></th>
                                         <td>{data.name.first + " " + data.name.last}</td>
                                         <td>{data.phone}</td>
                                         <td>{data.email}</td>
                                         <td>{data.dob.age}</td>
-                                    </tr>
-                                </tbody>
-                            })}
-
+                                    </tr>)
+                                })}
+                            </tbody>
                         </table>
                     </div>
                 </div>
