@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import style from "./directory.css";
+import "./directory.css";
 
 class Directory extends Component {
   // set state to work with
@@ -19,7 +19,7 @@ class Directory extends Component {
     axios
       .get("https://randomuser.me/api/?results=80&nat=us")
       .then((response) => {
-        // console.log(response.data.results)
+        console.log(response.data.results);
         this.setState({
           data: response.data.results,
           filterData: response.data.results,
@@ -65,20 +65,20 @@ class Directory extends Component {
       <>
         <div className="container-fluid">
           {" "}
-          <div className="row header-row" style={style}>
+          <div className="row header-row">
             <div className="col-sm-3" />
             <div className="col-sm-6 text-center">
               <h1>Employee Directory</h1>
             </div>
           </div>
         </div>
-        <div className="container">
-          <div className="row">
+        <div className="container-fluid">
+          <div className="row main-page">
             <div className="col-sm-1" />
             <div className="col-sm-10 text-center">
               <input
                 type="text"
-                class="form-control"
+                class="form-control input-search"
                 onChange={this.handleSearch}
                 placeholder="Search for employee"
                 aria-describedby="inputGroup-sizing-default"
@@ -104,7 +104,7 @@ class Directory extends Component {
                         <th scope="row">
                           <img src={user.picture.medium} />
                         </th>
-                        <td key={user.id.value}>
+                        <td key={user.login.uuid}>
                           {user.name.first + " " + user.name.last}
                         </td>
                         <td>{user.phone}</td>

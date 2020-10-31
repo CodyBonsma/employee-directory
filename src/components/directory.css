@@ -1,4 +1,18 @@
-.header-row{
-    margin: 20px;
-    background-color: bisque;
+.header-row {
+  padding: 20px;
+  border-bottom: thick;
+  border-bottom-color: coral;
+  background-color: skyblue;
+}
+
+.main-page {
+  background-color: gray;
+}
+
+.form-control {
+  width: auto;
+}
+
+body {
+  background-color: navy;
 }
