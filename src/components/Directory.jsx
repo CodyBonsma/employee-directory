@@ -70,6 +70,8 @@ class Directory extends Component {
             <div className="col-sm-3" />
             <div className="col-sm-6 text-center">
               <h1>Employee Directory</h1>
+              <hr></hr>
+              <h5>Search by first name or sort by clicking on 'Name'</h5>
             </div>
           </div>
         </div>
