@@ -13,6 +13,11 @@
 
 .form-control {
   width: auto;
+  border: solid;
+}
+
+.search-div {
+  text-align: center;
 }
 
 body {

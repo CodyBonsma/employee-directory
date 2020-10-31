@@ -81,7 +81,7 @@ class Directory extends Component {
             <div className="col-sm-10 text-center">
               <div className="search-bar row">
                 <div className="col-sm-3" />
-                <div className="col-sm-3">
+                <div className="col-sm-6 search-div">
                   <input
                     type="text"
                     class="form-control input-search"
