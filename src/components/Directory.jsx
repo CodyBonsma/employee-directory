@@ -46,6 +46,7 @@ class Directory extends Component {
     });
   };
 
+  // handleSort function to take in the on Change function
   handleSort = () => {
     console.log("clicked handle sort");
     // let sortedData
@@ -76,14 +77,19 @@ class Directory extends Component {
           <div className="row main-page">
             <div className="col-sm-1" />
             <div className="col-sm-10 text-center">
-              <input
-                type="text"
-                class="form-control input-search"
-                onChange={this.handleSearch}
-                placeholder="Search for employee"
-                aria-describedby="inputGroup-sizing-default"
-              />
-              <h2>This will hold the employee table rows</h2>
+              <div className="search-bar row">
+                <div className="col-sm-3" />
+                <div className="col-sm-6">
+                  <input
+                    type="text"
+                    class="form-control input-search"
+                    onChange={this.handleSearch}
+                    placeholder="Search for employee"
+                    aria-describedby="inputGroup-sizing-default"
+                  />
+                </div>
+              </div>
+
               <table className="table table-dark">
                 <thead>
                   <tr>

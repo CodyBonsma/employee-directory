@@ -5,8 +5,10 @@
   background-color: skyblue;
 }
 
-.main-page {
-  background-color: gray;
+.search-bar {
+  padding: 10px;
+  width: auto;
+  align-content: auto;
 }
 
 .form-control {
