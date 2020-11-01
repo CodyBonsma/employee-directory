@@ -90,6 +90,7 @@ class Directory extends Component {
                     aria-describedby="inputGroup-sizing-default"
                   />
                 </div>
+                <div className="col-sm-3" />
               </div>
 
               <table className="table table-dark">
